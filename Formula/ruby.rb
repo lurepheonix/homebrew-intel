@@ -1,6 +1,6 @@
 # ruby (farm shim-keg) — NOT mirrored from homebrew/core. Authored here.
 #
-# Placeholder keg so formulae with `depends_on "farm/local/ruby"` resolve
+# Placeholder keg so formulae with `depends_on "lurepheonix/intel/ruby"` resolve
 # without core ruby (unpourable on Tier-3 guests). The keg links the
 # asdf-installed ruby directly (resolved at install time, so no user name is
 # baked into the repo): this avoids the asdf shim chain inside brew builds
@@ -20,7 +20,7 @@ class Ruby < Formula
   sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
   version "4.0.7"
   # Never link into HOMEBREW_PREFIX and never shadow core ruby: this keg exists
-  # only so `depends_on "farm/local/ruby"` resolves; the shim does the work.
+  # only so `depends_on "lurepheonix/intel/ruby"` resolves; the shim does the work.
   keg_only "farm shim-keg for the external ruby slot (see build-deps.conf)"
 
   # No depends_on: this formula must never pull brewed interpreters (it replaces one).

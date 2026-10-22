@@ -1,6 +1,6 @@
 # python@3.15 (farm shim-keg) — NOT mirrored from homebrew/core. Authored here.
 #
-# Placeholder keg so formulae with `depends_on "farm/local/python@3.15"` resolve
+# Placeholder keg so formulae with `depends_on "lurepheonix/intel/python@3.15"` resolve
 # without core python (unpourable on Tier-3 guests). The keg only links the
 # farm-toolchain shims into its own opt prefix, so brew's dep machinery
 # (`python3` helper, `Keg.for`, `site_packages`, virtualenv) works unchanged
@@ -22,7 +22,7 @@ class PythonAT315 < Formula
   sha256 "ba4bed1ba346b916890b76d9e320451420aa69f6408997d33c66482eeae3d575"
   version "3.15.0"
   # Never link into HOMEBREW_PREFIX and never shadow anything: this keg exists
-  # only so `depends_on "farm/local/python@3.15"` resolves; the shims do the work.
+  # only so `depends_on "lurepheonix/intel/python@3.15"` resolves; the shims do the work.
   keg_only "farm shim-keg for the external python@3.15 slot (see build-deps.conf)"
 
   # No depends_on: this formula must never pull brewed interpreters (it replaces one).

@@ -1,6 +1,6 @@
 # swift (farm shim-keg) — NOT mirrored from homebrew/core. Authored here.
 #
-# Placeholder keg so formulae with `depends_on "farm/local/swift"` resolve
+# Placeholder keg so formulae with `depends_on "lurepheonix/intel/swift"` resolve
 # without brewing the swift formula (an LLVM-scale source build). The keg only
 # links the provisioned external toolchain (official swift.org macOS xctoolchain,
 # extracted user-local) into its own opt prefix, so brew's dep machinery works
@@ -24,7 +24,7 @@ class Swift < Formula
   sha256 "c34e7e5fb0be4bcd61decfd40db1766434d8952d68e37aed90bcff4e8547951c"
   version "6.4.1"
   # Never link into HOMEBREW_PREFIX and never shadow anything: this keg exists
-  # only so `depends_on "farm/local/swift"` resolves; the toolchain does the work.
+  # only so `depends_on "lurepheonix/intel/swift"` resolves; the toolchain does the work.
   keg_only "farm shim-keg for the external swift slot (see build-deps.conf)"
 
   # No depends_on: this formula must never pull brewed toolchains (it replaces one).
